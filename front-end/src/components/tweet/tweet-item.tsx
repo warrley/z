@@ -11,7 +11,7 @@ import { useState } from "react"
 
 type Props = {
     tweet: Tweet
-    hideComments: boolean;
+    hideComments?: boolean;
 }
 
 export const TweetItem = ({ tweet, hideComments }: Props) => {
