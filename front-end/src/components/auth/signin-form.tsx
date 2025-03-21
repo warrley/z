@@ -2,8 +2,9 @@
 
 import { useRouter } from "next/navigation"
 import { useState } from "react";
-import { Input } from "../Input";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
 
 export const SigninForm = () => {
     const router = useRouter();
@@ -21,7 +22,6 @@ export const SigninForm = () => {
                 value={email}
                 onChange={(t) => setEmail(t)}
                 placeholder="Enter your e-mail"
-                icon={faHeart}
             />
 
             <Input
@@ -31,7 +31,11 @@ export const SigninForm = () => {
                 placeholder="Enter your password"
             />
 
-            <button onClick={handleLogin}>Login</button>
+            <Button
+                label="Login"
+                onClick={handleLogin}
+                size={1}
+            />
         </>
     );
 };
