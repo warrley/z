@@ -22,7 +22,7 @@ export default function Layout({ children }: {children: ReactNode}) {
                         />
 
                         <NavItem
-                            href="/user"
+                            href="/profile"
                             icon={faUser}
                             label="My Perfil"
                         />
