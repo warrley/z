@@ -1,6 +1,6 @@
 "use client"
 
-import { User } from "@/types/User"
+import { User } from "@/types/user"
 import Link from "next/link";
 import { Button } from "./button";
 import { useState } from "react";

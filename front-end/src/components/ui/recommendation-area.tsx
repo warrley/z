@@ -1,4 +1,4 @@
-import { user } from "@/data/User"
+import { user } from "@/data/user"
 import { RecommendationItem, RecommendationItemSkeleton } from "./recommendation-item"
 import { TrendingItem, TrendingItemSkeleton } from "./trending-item"
 
