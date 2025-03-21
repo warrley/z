@@ -13,7 +13,6 @@ export const SignupForm = () => {
 
     const handleLogin = () => {
         router.replace("/home");
-        alert(email)
     };
 
     return (

@@ -12,7 +12,6 @@ export const SigninForm = () => {
 
     const handleLogin = () => {
         router.replace("/home");
-        alert(email)
     };
 
     return (
