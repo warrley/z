@@ -11,9 +11,10 @@ import { useState } from "react"
 
 type Props = {
     tweet: Tweet
+    hideComments: boolean;
 }
 
-export const TweetItem = ({ tweet }: Props) => {
+export const TweetItem = ({ tweet, hideComments }: Props) => {
     const [liked, setLiked] = useState(tweet.liked);
 
     const handleLike = () => {
@@ -45,14 +46,16 @@ export const TweetItem = ({ tweet }: Props) => {
                     />
                 }
                 <div className="flex mt-6 text-gray-500">
-                    <div className="flex-1">
-                        <Link href={`/tweet/${tweet.id}`}>
-                            <div className="inline-flex items-center gap-2 cursor-pointer">
-                                <FontAwesomeIcon icon={faComment} className="text-xl" />
-                                <div className="text-lg">{tweet.likeCount}</div>
-                            </div>
-                        </Link>
-                    </div>
+                    {!hideComments &&  
+                        <div className="flex-1">
+                            <Link href={`/tweet/${tweet.id}`}>
+                                <div className="inline-flex items-center gap-2 cursor-pointer">
+                                    <FontAwesomeIcon icon={faComment} className="text-xl" />
+                                    <div className="text-lg">{tweet.likeCount}</div>
+                                </div>
+                            </Link>
+                        </div>
+                    }
                     <div className="flex-1">
                         <div className="inline-flex items-center gap-2 cursor-pointer">
                             <FontAwesomeIcon icon={faRetweet} className="text-xl" />
