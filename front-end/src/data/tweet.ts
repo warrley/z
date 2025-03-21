@@ -1,4 +1,4 @@
-import { Tweet } from "@/types/Tweet";
+import { Tweet } from "@/types/tweet";
 import { user } from "./user";
 
 export const tweet: Tweet = {
@@ -8,7 +8,7 @@ export const tweet: Tweet = {
     likeCount: 523,
     commentCount: 61,
     retweetCount: 0,
-    liked: true,
+    liked: false,
     retweeted: false,
     dataPost: new Date(2024, 8, 1, 10, 0, 0)
 };
