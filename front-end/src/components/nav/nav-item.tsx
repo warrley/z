@@ -18,7 +18,7 @@ export const NavItem = ({ label, href, icon, active }: Props) => {
 
     return (
         <Link href={href} className={`flex items-center gap-6 py-3 ${isMe || active ? "opacity-100" : "opacity-50"} hover:opacity-100`}>
-            <FontAwesomeIcon icon={icon} className="size-6" />
+            <FontAwesomeIcon icon={icon} className="text-xl" />
             <div className="text-lg">{label}</div>
         </Link>
     )
