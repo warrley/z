@@ -10,7 +10,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -23,6 +23,8 @@ model User {
   cover String @default("default.jps")
   bio String?
   link String?
+  tweets Tweet[]
+  likes TweetLike[]
 }
 
 model Tweet {
@@ -32,11 +34,27 @@ model Tweet {
   image String?
   createdAt DateTime @default(now())
   answerOf Int @default(0)
+  user User @relation(fields: [userSlug], references: [slug])
+  likes TweetLike[]
 }
 
 model TweetLike {
   id Int @id @default(autoincrement())
   userSlug String
   tweetId Int
+  user User @relation(fields: [userSlug], references: [slug])
+  tweet Tweet @relation(fields: [tweetId], references: [id])
 }
 
+model Follow {
+  id Int @id @default(autoincrement())
+  user1Slug String
+  user2Slug String
+}
+
+model Tren {
+  id Int @id @default(autoincrement())
+  hastag String
+  counter Int @default(1)
+  updatedAt DateTime @default(now())
+}
