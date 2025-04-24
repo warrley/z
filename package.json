@@ -14,9 +14,11 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "helmet": "^8.1.0",
+    "prisma": "^6.6.0",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
+    "@prisma/client": "^6.6.0",
     "@types/cors": "^2.8.17",
     "@types/dotenv": "^6.1.1",
     "@types/express": "^5.0.1",

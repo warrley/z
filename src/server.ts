@@ -1,4 +1,4 @@
-import express from "express";
+import express, { urlencoded } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import helmet from "helmet";
@@ -8,6 +8,8 @@ const server = express();
 
 server.use(cors());
 server.use(helmet());
+server.use(express.json());
+server.use(urlencoded({ extended: true }))
 dotenv.config();
 
 server.use("/", mainRouter);
