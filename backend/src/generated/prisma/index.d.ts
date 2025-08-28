@@ -34,10 +34,10 @@ export type TweetLike = $Result.DefaultSelection<Prisma.$TweetLikePayload>
  */
 export type Follow = $Result.DefaultSelection<Prisma.$FollowPayload>
 /**
- * Model Tren
+ * Model Trend
  * 
  */
-export type Tren = $Result.DefaultSelection<Prisma.$TrenPayload>
+export type Trend = $Result.DefaultSelection<Prisma.$TrendPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -205,14 +205,14 @@ export class PrismaClient<
   get follow(): Prisma.FollowDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.tren`: Exposes CRUD operations for the **Tren** model.
+   * `prisma.trend`: Exposes CRUD operations for the **Trend** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Trens
-    * const trens = await prisma.tren.findMany()
+    * // Fetch zero or more Trends
+    * const trends = await prisma.trend.findMany()
     * ```
     */
-  get tren(): Prisma.TrenDelegate<ExtArgs, ClientOptions>;
+  get trend(): Prisma.TrendDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -657,7 +657,7 @@ export namespace Prisma {
     Tweet: 'Tweet',
     TweetLike: 'TweetLike',
     Follow: 'Follow',
-    Tren: 'Tren'
+    Trend: 'Trend'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -676,7 +676,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "tweet" | "tweetLike" | "follow" | "tren"
+      modelProps: "user" | "tweet" | "tweetLike" | "follow" | "trend"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -944,69 +944,69 @@ export namespace Prisma {
           }
         }
       }
-      Tren: {
-        payload: Prisma.$TrenPayload<ExtArgs>
-        fields: Prisma.TrenFieldRefs
+      Trend: {
+        payload: Prisma.$TrendPayload<ExtArgs>
+        fields: Prisma.TrendFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.TrenFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TrenPayload> | null
+            args: Prisma.TrendFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TrendPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.TrenFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TrenPayload>
+            args: Prisma.TrendFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TrendPayload>
           }
           findFirst: {
-            args: Prisma.TrenFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TrenPayload> | null
+            args: Prisma.TrendFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TrendPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.TrenFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TrenPayload>
+            args: Prisma.TrendFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TrendPayload>
           }
           findMany: {
-            args: Prisma.TrenFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TrenPayload>[]
+            args: Prisma.TrendFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TrendPayload>[]
           }
           create: {
-            args: Prisma.TrenCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TrenPayload>
+            args: Prisma.TrendCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TrendPayload>
           }
           createMany: {
-            args: Prisma.TrenCreateManyArgs<ExtArgs>
+            args: Prisma.TrendCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.TrenDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TrenPayload>
+            args: Prisma.TrendDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TrendPayload>
           }
           update: {
-            args: Prisma.TrenUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TrenPayload>
+            args: Prisma.TrendUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TrendPayload>
           }
           deleteMany: {
-            args: Prisma.TrenDeleteManyArgs<ExtArgs>
+            args: Prisma.TrendDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.TrenUpdateManyArgs<ExtArgs>
+            args: Prisma.TrendUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.TrenUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TrenPayload>
+            args: Prisma.TrendUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TrendPayload>
           }
           aggregate: {
-            args: Prisma.TrenAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateTren>
+            args: Prisma.TrendAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTrend>
           }
           groupBy: {
-            args: Prisma.TrenGroupByArgs<ExtArgs>
-            result: $Utils.Optional<TrenGroupByOutputType>[]
+            args: Prisma.TrendGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TrendGroupByOutputType>[]
           }
           count: {
-            args: Prisma.TrenCountArgs<ExtArgs>
-            result: $Utils.Optional<TrenCountAggregateOutputType> | number
+            args: Prisma.TrendCountArgs<ExtArgs>
+            result: $Utils.Optional<TrendCountAggregateOutputType> | number
           }
         }
       }
@@ -1098,7 +1098,7 @@ export namespace Prisma {
     tweet?: TweetOmit
     tweetLike?: TweetLikeOmit
     follow?: FollowOmit
-    tren?: TrenOmit
+    trend?: TrendOmit
   }
 
   /* Types for Logging */
@@ -5131,42 +5131,42 @@ export namespace Prisma {
 
 
   /**
-   * Model Tren
+   * Model Trend
    */
 
-  export type AggregateTren = {
-    _count: TrenCountAggregateOutputType | null
-    _avg: TrenAvgAggregateOutputType | null
-    _sum: TrenSumAggregateOutputType | null
-    _min: TrenMinAggregateOutputType | null
-    _max: TrenMaxAggregateOutputType | null
+  export type AggregateTrend = {
+    _count: TrendCountAggregateOutputType | null
+    _avg: TrendAvgAggregateOutputType | null
+    _sum: TrendSumAggregateOutputType | null
+    _min: TrendMinAggregateOutputType | null
+    _max: TrendMaxAggregateOutputType | null
   }
 
-  export type TrenAvgAggregateOutputType = {
+  export type TrendAvgAggregateOutputType = {
     id: number | null
     counter: number | null
   }
 
-  export type TrenSumAggregateOutputType = {
+  export type TrendSumAggregateOutputType = {
     id: number | null
     counter: number | null
   }
 
-  export type TrenMinAggregateOutputType = {
-    id: number | null
-    hastag: string | null
-    counter: number | null
-    updatedAt: Date | null
-  }
-
-  export type TrenMaxAggregateOutputType = {
+  export type TrendMinAggregateOutputType = {
     id: number | null
     hastag: string | null
     counter: number | null
     updatedAt: Date | null
   }
 
-  export type TrenCountAggregateOutputType = {
+  export type TrendMaxAggregateOutputType = {
+    id: number | null
+    hastag: string | null
+    counter: number | null
+    updatedAt: Date | null
+  }
+
+  export type TrendCountAggregateOutputType = {
     id: number
     hastag: number
     counter: number
@@ -5175,31 +5175,31 @@ export namespace Prisma {
   }
 
 
-  export type TrenAvgAggregateInputType = {
+  export type TrendAvgAggregateInputType = {
     id?: true
     counter?: true
   }
 
-  export type TrenSumAggregateInputType = {
+  export type TrendSumAggregateInputType = {
     id?: true
     counter?: true
   }
 
-  export type TrenMinAggregateInputType = {
-    id?: true
-    hastag?: true
-    counter?: true
-    updatedAt?: true
-  }
-
-  export type TrenMaxAggregateInputType = {
+  export type TrendMinAggregateInputType = {
     id?: true
     hastag?: true
     counter?: true
     updatedAt?: true
   }
 
-  export type TrenCountAggregateInputType = {
+  export type TrendMaxAggregateInputType = {
+    id?: true
+    hastag?: true
+    counter?: true
+    updatedAt?: true
+  }
+
+  export type TrendCountAggregateInputType = {
     id?: true
     hastag?: true
     counter?: true
@@ -5207,281 +5207,281 @@ export namespace Prisma {
     _all?: true
   }
 
-  export type TrenAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TrendAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Tren to aggregate.
+     * Filter which Trend to aggregate.
      */
-    where?: TrenWhereInput
+    where?: TrendWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Trens to fetch.
+     * Determine the order of Trends to fetch.
      */
-    orderBy?: TrenOrderByWithRelationInput | TrenOrderByWithRelationInput[]
+    orderBy?: TrendOrderByWithRelationInput | TrendOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: TrenWhereUniqueInput
+    cursor?: TrendWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Trens from the position of the cursor.
+     * Take `±n` Trends from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Trens.
+     * Skip the first `n` Trends.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Trens
+     * Count returned Trends
     **/
-    _count?: true | TrenCountAggregateInputType
+    _count?: true | TrendCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: TrenAvgAggregateInputType
+    _avg?: TrendAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: TrenSumAggregateInputType
+    _sum?: TrendSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: TrenMinAggregateInputType
+    _min?: TrendMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: TrenMaxAggregateInputType
+    _max?: TrendMaxAggregateInputType
   }
 
-  export type GetTrenAggregateType<T extends TrenAggregateArgs> = {
-        [P in keyof T & keyof AggregateTren]: P extends '_count' | 'count'
+  export type GetTrendAggregateType<T extends TrendAggregateArgs> = {
+        [P in keyof T & keyof AggregateTrend]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateTren[P]>
-      : GetScalarType<T[P], AggregateTren[P]>
+        : GetScalarType<T[P], AggregateTrend[P]>
+      : GetScalarType<T[P], AggregateTrend[P]>
   }
 
 
 
 
-  export type TrenGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: TrenWhereInput
-    orderBy?: TrenOrderByWithAggregationInput | TrenOrderByWithAggregationInput[]
-    by: TrenScalarFieldEnum[] | TrenScalarFieldEnum
-    having?: TrenScalarWhereWithAggregatesInput
+  export type TrendGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TrendWhereInput
+    orderBy?: TrendOrderByWithAggregationInput | TrendOrderByWithAggregationInput[]
+    by: TrendScalarFieldEnum[] | TrendScalarFieldEnum
+    having?: TrendScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: TrenCountAggregateInputType | true
-    _avg?: TrenAvgAggregateInputType
-    _sum?: TrenSumAggregateInputType
-    _min?: TrenMinAggregateInputType
-    _max?: TrenMaxAggregateInputType
+    _count?: TrendCountAggregateInputType | true
+    _avg?: TrendAvgAggregateInputType
+    _sum?: TrendSumAggregateInputType
+    _min?: TrendMinAggregateInputType
+    _max?: TrendMaxAggregateInputType
   }
 
-  export type TrenGroupByOutputType = {
+  export type TrendGroupByOutputType = {
     id: number
     hastag: string
     counter: number
     updatedAt: Date
-    _count: TrenCountAggregateOutputType | null
-    _avg: TrenAvgAggregateOutputType | null
-    _sum: TrenSumAggregateOutputType | null
-    _min: TrenMinAggregateOutputType | null
-    _max: TrenMaxAggregateOutputType | null
+    _count: TrendCountAggregateOutputType | null
+    _avg: TrendAvgAggregateOutputType | null
+    _sum: TrendSumAggregateOutputType | null
+    _min: TrendMinAggregateOutputType | null
+    _max: TrendMaxAggregateOutputType | null
   }
 
-  type GetTrenGroupByPayload<T extends TrenGroupByArgs> = Prisma.PrismaPromise<
+  type GetTrendGroupByPayload<T extends TrendGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<TrenGroupByOutputType, T['by']> &
+      PickEnumerable<TrendGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof TrenGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof TrendGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], TrenGroupByOutputType[P]>
-            : GetScalarType<T[P], TrenGroupByOutputType[P]>
+              : GetScalarType<T[P], TrendGroupByOutputType[P]>
+            : GetScalarType<T[P], TrendGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type TrenSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type TrendSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     hastag?: boolean
     counter?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["tren"]>
+  }, ExtArgs["result"]["trend"]>
 
 
 
-  export type TrenSelectScalar = {
+  export type TrendSelectScalar = {
     id?: boolean
     hastag?: boolean
     counter?: boolean
     updatedAt?: boolean
   }
 
-  export type TrenOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "hastag" | "counter" | "updatedAt", ExtArgs["result"]["tren"]>
+  export type TrendOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "hastag" | "counter" | "updatedAt", ExtArgs["result"]["trend"]>
 
-  export type $TrenPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Tren"
+  export type $TrendPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Trend"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
       hastag: string
       counter: number
       updatedAt: Date
-    }, ExtArgs["result"]["tren"]>
+    }, ExtArgs["result"]["trend"]>
     composites: {}
   }
 
-  type TrenGetPayload<S extends boolean | null | undefined | TrenDefaultArgs> = $Result.GetResult<Prisma.$TrenPayload, S>
+  type TrendGetPayload<S extends boolean | null | undefined | TrendDefaultArgs> = $Result.GetResult<Prisma.$TrendPayload, S>
 
-  type TrenCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<TrenFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: TrenCountAggregateInputType | true
+  type TrendCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<TrendFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: TrendCountAggregateInputType | true
     }
 
-  export interface TrenDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Tren'], meta: { name: 'Tren' } }
+  export interface TrendDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Trend'], meta: { name: 'Trend' } }
     /**
-     * Find zero or one Tren that matches the filter.
-     * @param {TrenFindUniqueArgs} args - Arguments to find a Tren
+     * Find zero or one Trend that matches the filter.
+     * @param {TrendFindUniqueArgs} args - Arguments to find a Trend
      * @example
-     * // Get one Tren
-     * const tren = await prisma.tren.findUnique({
+     * // Get one Trend
+     * const trend = await prisma.trend.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends TrenFindUniqueArgs>(args: SelectSubset<T, TrenFindUniqueArgs<ExtArgs>>): Prisma__TrenClient<$Result.GetResult<Prisma.$TrenPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends TrendFindUniqueArgs>(args: SelectSubset<T, TrendFindUniqueArgs<ExtArgs>>): Prisma__TrendClient<$Result.GetResult<Prisma.$TrendPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Tren that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Trend that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {TrenFindUniqueOrThrowArgs} args - Arguments to find a Tren
+     * @param {TrendFindUniqueOrThrowArgs} args - Arguments to find a Trend
      * @example
-     * // Get one Tren
-     * const tren = await prisma.tren.findUniqueOrThrow({
+     * // Get one Trend
+     * const trend = await prisma.trend.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends TrenFindUniqueOrThrowArgs>(args: SelectSubset<T, TrenFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TrenClient<$Result.GetResult<Prisma.$TrenPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends TrendFindUniqueOrThrowArgs>(args: SelectSubset<T, TrendFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TrendClient<$Result.GetResult<Prisma.$TrendPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Tren that matches the filter.
+     * Find the first Trend that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TrenFindFirstArgs} args - Arguments to find a Tren
+     * @param {TrendFindFirstArgs} args - Arguments to find a Trend
      * @example
-     * // Get one Tren
-     * const tren = await prisma.tren.findFirst({
+     * // Get one Trend
+     * const trend = await prisma.trend.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends TrenFindFirstArgs>(args?: SelectSubset<T, TrenFindFirstArgs<ExtArgs>>): Prisma__TrenClient<$Result.GetResult<Prisma.$TrenPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends TrendFindFirstArgs>(args?: SelectSubset<T, TrendFindFirstArgs<ExtArgs>>): Prisma__TrendClient<$Result.GetResult<Prisma.$TrendPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Tren that matches the filter or
+     * Find the first Trend that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TrenFindFirstOrThrowArgs} args - Arguments to find a Tren
+     * @param {TrendFindFirstOrThrowArgs} args - Arguments to find a Trend
      * @example
-     * // Get one Tren
-     * const tren = await prisma.tren.findFirstOrThrow({
+     * // Get one Trend
+     * const trend = await prisma.trend.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends TrenFindFirstOrThrowArgs>(args?: SelectSubset<T, TrenFindFirstOrThrowArgs<ExtArgs>>): Prisma__TrenClient<$Result.GetResult<Prisma.$TrenPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends TrendFindFirstOrThrowArgs>(args?: SelectSubset<T, TrendFindFirstOrThrowArgs<ExtArgs>>): Prisma__TrendClient<$Result.GetResult<Prisma.$TrendPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Trens that matches the filter.
+     * Find zero or more Trends that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TrenFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {TrendFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Trens
-     * const trens = await prisma.tren.findMany()
+     * // Get all Trends
+     * const trends = await prisma.trend.findMany()
      * 
-     * // Get first 10 Trens
-     * const trens = await prisma.tren.findMany({ take: 10 })
+     * // Get first 10 Trends
+     * const trends = await prisma.trend.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const trenWithIdOnly = await prisma.tren.findMany({ select: { id: true } })
+     * const trendWithIdOnly = await prisma.trend.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends TrenFindManyArgs>(args?: SelectSubset<T, TrenFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TrenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends TrendFindManyArgs>(args?: SelectSubset<T, TrendFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TrendPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Tren.
-     * @param {TrenCreateArgs} args - Arguments to create a Tren.
+     * Create a Trend.
+     * @param {TrendCreateArgs} args - Arguments to create a Trend.
      * @example
-     * // Create one Tren
-     * const Tren = await prisma.tren.create({
+     * // Create one Trend
+     * const Trend = await prisma.trend.create({
      *   data: {
-     *     // ... data to create a Tren
+     *     // ... data to create a Trend
      *   }
      * })
      * 
      */
-    create<T extends TrenCreateArgs>(args: SelectSubset<T, TrenCreateArgs<ExtArgs>>): Prisma__TrenClient<$Result.GetResult<Prisma.$TrenPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends TrendCreateArgs>(args: SelectSubset<T, TrendCreateArgs<ExtArgs>>): Prisma__TrendClient<$Result.GetResult<Prisma.$TrendPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Trens.
-     * @param {TrenCreateManyArgs} args - Arguments to create many Trens.
+     * Create many Trends.
+     * @param {TrendCreateManyArgs} args - Arguments to create many Trends.
      * @example
-     * // Create many Trens
-     * const tren = await prisma.tren.createMany({
+     * // Create many Trends
+     * const trend = await prisma.trend.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends TrenCreateManyArgs>(args?: SelectSubset<T, TrenCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends TrendCreateManyArgs>(args?: SelectSubset<T, TrendCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Delete a Tren.
-     * @param {TrenDeleteArgs} args - Arguments to delete one Tren.
+     * Delete a Trend.
+     * @param {TrendDeleteArgs} args - Arguments to delete one Trend.
      * @example
-     * // Delete one Tren
-     * const Tren = await prisma.tren.delete({
+     * // Delete one Trend
+     * const Trend = await prisma.trend.delete({
      *   where: {
-     *     // ... filter to delete one Tren
+     *     // ... filter to delete one Trend
      *   }
      * })
      * 
      */
-    delete<T extends TrenDeleteArgs>(args: SelectSubset<T, TrenDeleteArgs<ExtArgs>>): Prisma__TrenClient<$Result.GetResult<Prisma.$TrenPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends TrendDeleteArgs>(args: SelectSubset<T, TrendDeleteArgs<ExtArgs>>): Prisma__TrendClient<$Result.GetResult<Prisma.$TrendPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Tren.
-     * @param {TrenUpdateArgs} args - Arguments to update one Tren.
+     * Update one Trend.
+     * @param {TrendUpdateArgs} args - Arguments to update one Trend.
      * @example
-     * // Update one Tren
-     * const tren = await prisma.tren.update({
+     * // Update one Trend
+     * const trend = await prisma.trend.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -5491,30 +5491,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends TrenUpdateArgs>(args: SelectSubset<T, TrenUpdateArgs<ExtArgs>>): Prisma__TrenClient<$Result.GetResult<Prisma.$TrenPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends TrendUpdateArgs>(args: SelectSubset<T, TrendUpdateArgs<ExtArgs>>): Prisma__TrendClient<$Result.GetResult<Prisma.$TrendPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Trens.
-     * @param {TrenDeleteManyArgs} args - Arguments to filter Trens to delete.
+     * Delete zero or more Trends.
+     * @param {TrendDeleteManyArgs} args - Arguments to filter Trends to delete.
      * @example
-     * // Delete a few Trens
-     * const { count } = await prisma.tren.deleteMany({
+     * // Delete a few Trends
+     * const { count } = await prisma.trend.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends TrenDeleteManyArgs>(args?: SelectSubset<T, TrenDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends TrendDeleteManyArgs>(args?: SelectSubset<T, TrendDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Trens.
+     * Update zero or more Trends.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TrenUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {TrendUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Trens
-     * const tren = await prisma.tren.updateMany({
+     * // Update many Trends
+     * const trend = await prisma.trend.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -5524,56 +5524,56 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends TrenUpdateManyArgs>(args: SelectSubset<T, TrenUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends TrendUpdateManyArgs>(args: SelectSubset<T, TrendUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one Tren.
-     * @param {TrenUpsertArgs} args - Arguments to update or create a Tren.
+     * Create or update one Trend.
+     * @param {TrendUpsertArgs} args - Arguments to update or create a Trend.
      * @example
-     * // Update or create a Tren
-     * const tren = await prisma.tren.upsert({
+     * // Update or create a Trend
+     * const trend = await prisma.trend.upsert({
      *   create: {
-     *     // ... data to create a Tren
+     *     // ... data to create a Trend
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Tren we want to update
+     *     // ... the filter for the Trend we want to update
      *   }
      * })
      */
-    upsert<T extends TrenUpsertArgs>(args: SelectSubset<T, TrenUpsertArgs<ExtArgs>>): Prisma__TrenClient<$Result.GetResult<Prisma.$TrenPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends TrendUpsertArgs>(args: SelectSubset<T, TrendUpsertArgs<ExtArgs>>): Prisma__TrendClient<$Result.GetResult<Prisma.$TrendPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Trens.
+     * Count the number of Trends.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TrenCountArgs} args - Arguments to filter Trens to count.
+     * @param {TrendCountArgs} args - Arguments to filter Trends to count.
      * @example
-     * // Count the number of Trens
-     * const count = await prisma.tren.count({
+     * // Count the number of Trends
+     * const count = await prisma.trend.count({
      *   where: {
-     *     // ... the filter for the Trens we want to count
+     *     // ... the filter for the Trends we want to count
      *   }
      * })
     **/
-    count<T extends TrenCountArgs>(
-      args?: Subset<T, TrenCountArgs>,
+    count<T extends TrendCountArgs>(
+      args?: Subset<T, TrendCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], TrenCountAggregateOutputType>
+          : GetScalarType<T['select'], TrendCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Tren.
+     * Allows you to perform aggregations operations on a Trend.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TrenAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {TrendAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -5593,13 +5593,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends TrenAggregateArgs>(args: Subset<T, TrenAggregateArgs>): Prisma.PrismaPromise<GetTrenAggregateType<T>>
+    aggregate<T extends TrendAggregateArgs>(args: Subset<T, TrendAggregateArgs>): Prisma.PrismaPromise<GetTrendAggregateType<T>>
 
     /**
-     * Group by Tren.
+     * Group by Trend.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TrenGroupByArgs} args - Group by arguments.
+     * @param {TrendGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -5614,14 +5614,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends TrenGroupByArgs,
+      T extends TrendGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: TrenGroupByArgs['orderBy'] }
-        : { orderBy?: TrenGroupByArgs['orderBy'] },
+        ? { orderBy: TrendGroupByArgs['orderBy'] }
+        : { orderBy?: TrendGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -5670,20 +5670,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, TrenGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTrenGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, TrendGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTrendGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Tren model
+   * Fields of the Trend model
    */
-  readonly fields: TrenFieldRefs;
+  readonly fields: TrendFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Tren.
+   * The delegate class that acts as a "Promise-like" for Trend.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__TrenClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__TrendClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -5711,331 +5711,331 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Tren model
+   * Fields of the Trend model
    */
-  interface TrenFieldRefs {
-    readonly id: FieldRef<"Tren", 'Int'>
-    readonly hastag: FieldRef<"Tren", 'String'>
-    readonly counter: FieldRef<"Tren", 'Int'>
-    readonly updatedAt: FieldRef<"Tren", 'DateTime'>
+  interface TrendFieldRefs {
+    readonly id: FieldRef<"Trend", 'Int'>
+    readonly hastag: FieldRef<"Trend", 'String'>
+    readonly counter: FieldRef<"Trend", 'Int'>
+    readonly updatedAt: FieldRef<"Trend", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Tren findUnique
+   * Trend findUnique
    */
-  export type TrenFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TrendFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tren
+     * Select specific fields to fetch from the Trend
      */
-    select?: TrenSelect<ExtArgs> | null
+    select?: TrendSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tren
+     * Omit specific fields from the Trend
      */
-    omit?: TrenOmit<ExtArgs> | null
+    omit?: TrendOmit<ExtArgs> | null
     /**
-     * Filter, which Tren to fetch.
+     * Filter, which Trend to fetch.
      */
-    where: TrenWhereUniqueInput
+    where: TrendWhereUniqueInput
   }
 
   /**
-   * Tren findUniqueOrThrow
+   * Trend findUniqueOrThrow
    */
-  export type TrenFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TrendFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tren
+     * Select specific fields to fetch from the Trend
      */
-    select?: TrenSelect<ExtArgs> | null
+    select?: TrendSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tren
+     * Omit specific fields from the Trend
      */
-    omit?: TrenOmit<ExtArgs> | null
+    omit?: TrendOmit<ExtArgs> | null
     /**
-     * Filter, which Tren to fetch.
+     * Filter, which Trend to fetch.
      */
-    where: TrenWhereUniqueInput
+    where: TrendWhereUniqueInput
   }
 
   /**
-   * Tren findFirst
+   * Trend findFirst
    */
-  export type TrenFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TrendFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tren
+     * Select specific fields to fetch from the Trend
      */
-    select?: TrenSelect<ExtArgs> | null
+    select?: TrendSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tren
+     * Omit specific fields from the Trend
      */
-    omit?: TrenOmit<ExtArgs> | null
+    omit?: TrendOmit<ExtArgs> | null
     /**
-     * Filter, which Tren to fetch.
+     * Filter, which Trend to fetch.
      */
-    where?: TrenWhereInput
+    where?: TrendWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Trens to fetch.
+     * Determine the order of Trends to fetch.
      */
-    orderBy?: TrenOrderByWithRelationInput | TrenOrderByWithRelationInput[]
+    orderBy?: TrendOrderByWithRelationInput | TrendOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Trens.
+     * Sets the position for searching for Trends.
      */
-    cursor?: TrenWhereUniqueInput
+    cursor?: TrendWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Trens from the position of the cursor.
+     * Take `±n` Trends from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Trens.
+     * Skip the first `n` Trends.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Trens.
+     * Filter by unique combinations of Trends.
      */
-    distinct?: TrenScalarFieldEnum | TrenScalarFieldEnum[]
+    distinct?: TrendScalarFieldEnum | TrendScalarFieldEnum[]
   }
 
   /**
-   * Tren findFirstOrThrow
+   * Trend findFirstOrThrow
    */
-  export type TrenFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TrendFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tren
+     * Select specific fields to fetch from the Trend
      */
-    select?: TrenSelect<ExtArgs> | null
+    select?: TrendSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tren
+     * Omit specific fields from the Trend
      */
-    omit?: TrenOmit<ExtArgs> | null
+    omit?: TrendOmit<ExtArgs> | null
     /**
-     * Filter, which Tren to fetch.
+     * Filter, which Trend to fetch.
      */
-    where?: TrenWhereInput
+    where?: TrendWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Trens to fetch.
+     * Determine the order of Trends to fetch.
      */
-    orderBy?: TrenOrderByWithRelationInput | TrenOrderByWithRelationInput[]
+    orderBy?: TrendOrderByWithRelationInput | TrendOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Trens.
+     * Sets the position for searching for Trends.
      */
-    cursor?: TrenWhereUniqueInput
+    cursor?: TrendWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Trens from the position of the cursor.
+     * Take `±n` Trends from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Trens.
+     * Skip the first `n` Trends.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Trens.
+     * Filter by unique combinations of Trends.
      */
-    distinct?: TrenScalarFieldEnum | TrenScalarFieldEnum[]
+    distinct?: TrendScalarFieldEnum | TrendScalarFieldEnum[]
   }
 
   /**
-   * Tren findMany
+   * Trend findMany
    */
-  export type TrenFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TrendFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tren
+     * Select specific fields to fetch from the Trend
      */
-    select?: TrenSelect<ExtArgs> | null
+    select?: TrendSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tren
+     * Omit specific fields from the Trend
      */
-    omit?: TrenOmit<ExtArgs> | null
+    omit?: TrendOmit<ExtArgs> | null
     /**
-     * Filter, which Trens to fetch.
+     * Filter, which Trends to fetch.
      */
-    where?: TrenWhereInput
+    where?: TrendWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Trens to fetch.
+     * Determine the order of Trends to fetch.
      */
-    orderBy?: TrenOrderByWithRelationInput | TrenOrderByWithRelationInput[]
+    orderBy?: TrendOrderByWithRelationInput | TrendOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Trens.
+     * Sets the position for listing Trends.
      */
-    cursor?: TrenWhereUniqueInput
+    cursor?: TrendWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Trens from the position of the cursor.
+     * Take `±n` Trends from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Trens.
+     * Skip the first `n` Trends.
      */
     skip?: number
-    distinct?: TrenScalarFieldEnum | TrenScalarFieldEnum[]
+    distinct?: TrendScalarFieldEnum | TrendScalarFieldEnum[]
   }
 
   /**
-   * Tren create
+   * Trend create
    */
-  export type TrenCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TrendCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tren
+     * Select specific fields to fetch from the Trend
      */
-    select?: TrenSelect<ExtArgs> | null
+    select?: TrendSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tren
+     * Omit specific fields from the Trend
      */
-    omit?: TrenOmit<ExtArgs> | null
+    omit?: TrendOmit<ExtArgs> | null
     /**
-     * The data needed to create a Tren.
+     * The data needed to create a Trend.
      */
-    data: XOR<TrenCreateInput, TrenUncheckedCreateInput>
+    data: XOR<TrendCreateInput, TrendUncheckedCreateInput>
   }
 
   /**
-   * Tren createMany
+   * Trend createMany
    */
-  export type TrenCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TrendCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Trens.
+     * The data used to create many Trends.
      */
-    data: TrenCreateManyInput | TrenCreateManyInput[]
+    data: TrendCreateManyInput | TrendCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Tren update
+   * Trend update
    */
-  export type TrenUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TrendUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tren
+     * Select specific fields to fetch from the Trend
      */
-    select?: TrenSelect<ExtArgs> | null
+    select?: TrendSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tren
+     * Omit specific fields from the Trend
      */
-    omit?: TrenOmit<ExtArgs> | null
+    omit?: TrendOmit<ExtArgs> | null
     /**
-     * The data needed to update a Tren.
+     * The data needed to update a Trend.
      */
-    data: XOR<TrenUpdateInput, TrenUncheckedUpdateInput>
+    data: XOR<TrendUpdateInput, TrendUncheckedUpdateInput>
     /**
-     * Choose, which Tren to update.
+     * Choose, which Trend to update.
      */
-    where: TrenWhereUniqueInput
+    where: TrendWhereUniqueInput
   }
 
   /**
-   * Tren updateMany
+   * Trend updateMany
    */
-  export type TrenUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TrendUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Trens.
+     * The data used to update Trends.
      */
-    data: XOR<TrenUpdateManyMutationInput, TrenUncheckedUpdateManyInput>
+    data: XOR<TrendUpdateManyMutationInput, TrendUncheckedUpdateManyInput>
     /**
-     * Filter which Trens to update
+     * Filter which Trends to update
      */
-    where?: TrenWhereInput
+    where?: TrendWhereInput
     /**
-     * Limit how many Trens to update.
+     * Limit how many Trends to update.
      */
     limit?: number
   }
 
   /**
-   * Tren upsert
+   * Trend upsert
    */
-  export type TrenUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TrendUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tren
+     * Select specific fields to fetch from the Trend
      */
-    select?: TrenSelect<ExtArgs> | null
+    select?: TrendSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tren
+     * Omit specific fields from the Trend
      */
-    omit?: TrenOmit<ExtArgs> | null
+    omit?: TrendOmit<ExtArgs> | null
     /**
-     * The filter to search for the Tren to update in case it exists.
+     * The filter to search for the Trend to update in case it exists.
      */
-    where: TrenWhereUniqueInput
+    where: TrendWhereUniqueInput
     /**
-     * In case the Tren found by the `where` argument doesn't exist, create a new Tren with this data.
+     * In case the Trend found by the `where` argument doesn't exist, create a new Trend with this data.
      */
-    create: XOR<TrenCreateInput, TrenUncheckedCreateInput>
+    create: XOR<TrendCreateInput, TrendUncheckedCreateInput>
     /**
-     * In case the Tren was found with the provided `where` argument, update it with this data.
+     * In case the Trend was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<TrenUpdateInput, TrenUncheckedUpdateInput>
+    update: XOR<TrendUpdateInput, TrendUncheckedUpdateInput>
   }
 
   /**
-   * Tren delete
+   * Trend delete
    */
-  export type TrenDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TrendDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tren
+     * Select specific fields to fetch from the Trend
      */
-    select?: TrenSelect<ExtArgs> | null
+    select?: TrendSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tren
+     * Omit specific fields from the Trend
      */
-    omit?: TrenOmit<ExtArgs> | null
+    omit?: TrendOmit<ExtArgs> | null
     /**
-     * Filter which Tren to delete.
+     * Filter which Trend to delete.
      */
-    where: TrenWhereUniqueInput
+    where: TrendWhereUniqueInput
   }
 
   /**
-   * Tren deleteMany
+   * Trend deleteMany
    */
-  export type TrenDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TrendDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Trens to delete
+     * Filter which Trends to delete
      */
-    where?: TrenWhereInput
+    where?: TrendWhereInput
     /**
-     * Limit how many Trens to delete.
+     * Limit how many Trends to delete.
      */
     limit?: number
   }
 
   /**
-   * Tren without action
+   * Trend without action
    */
-  export type TrenDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TrendDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tren
+     * Select specific fields to fetch from the Trend
      */
-    select?: TrenSelect<ExtArgs> | null
+    select?: TrendSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tren
+     * Omit specific fields from the Trend
      */
-    omit?: TrenOmit<ExtArgs> | null
+    omit?: TrendOmit<ExtArgs> | null
   }
 
 
@@ -6097,14 +6097,14 @@ export namespace Prisma {
   export type FollowScalarFieldEnum = (typeof FollowScalarFieldEnum)[keyof typeof FollowScalarFieldEnum]
 
 
-  export const TrenScalarFieldEnum: {
+  export const TrendScalarFieldEnum: {
     id: 'id',
     hastag: 'hastag',
     counter: 'counter',
     updatedAt: 'updatedAt'
   };
 
-  export type TrenScalarFieldEnum = (typeof TrenScalarFieldEnum)[keyof typeof TrenScalarFieldEnum]
+  export type TrendScalarFieldEnum = (typeof TrendScalarFieldEnum)[keyof typeof TrendScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -6161,11 +6161,11 @@ export namespace Prisma {
   export type FollowOrderByRelevanceFieldEnum = (typeof FollowOrderByRelevanceFieldEnum)[keyof typeof FollowOrderByRelevanceFieldEnum]
 
 
-  export const TrenOrderByRelevanceFieldEnum: {
+  export const TrendOrderByRelevanceFieldEnum: {
     hastag: 'hastag'
   };
 
-  export type TrenOrderByRelevanceFieldEnum = (typeof TrenOrderByRelevanceFieldEnum)[keyof typeof TrenOrderByRelevanceFieldEnum]
+  export type TrendOrderByRelevanceFieldEnum = (typeof TrendOrderByRelevanceFieldEnum)[keyof typeof TrendOrderByRelevanceFieldEnum]
 
 
   /**
@@ -6440,54 +6440,54 @@ export namespace Prisma {
     user2Slug?: StringWithAggregatesFilter<"Follow"> | string
   }
 
-  export type TrenWhereInput = {
-    AND?: TrenWhereInput | TrenWhereInput[]
-    OR?: TrenWhereInput[]
-    NOT?: TrenWhereInput | TrenWhereInput[]
-    id?: IntFilter<"Tren"> | number
-    hastag?: StringFilter<"Tren"> | string
-    counter?: IntFilter<"Tren"> | number
-    updatedAt?: DateTimeFilter<"Tren"> | Date | string
+  export type TrendWhereInput = {
+    AND?: TrendWhereInput | TrendWhereInput[]
+    OR?: TrendWhereInput[]
+    NOT?: TrendWhereInput | TrendWhereInput[]
+    id?: IntFilter<"Trend"> | number
+    hastag?: StringFilter<"Trend"> | string
+    counter?: IntFilter<"Trend"> | number
+    updatedAt?: DateTimeFilter<"Trend"> | Date | string
   }
 
-  export type TrenOrderByWithRelationInput = {
+  export type TrendOrderByWithRelationInput = {
     id?: SortOrder
     hastag?: SortOrder
     counter?: SortOrder
     updatedAt?: SortOrder
-    _relevance?: TrenOrderByRelevanceInput
+    _relevance?: TrendOrderByRelevanceInput
   }
 
-  export type TrenWhereUniqueInput = Prisma.AtLeast<{
+  export type TrendWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: TrenWhereInput | TrenWhereInput[]
-    OR?: TrenWhereInput[]
-    NOT?: TrenWhereInput | TrenWhereInput[]
-    hastag?: StringFilter<"Tren"> | string
-    counter?: IntFilter<"Tren"> | number
-    updatedAt?: DateTimeFilter<"Tren"> | Date | string
+    AND?: TrendWhereInput | TrendWhereInput[]
+    OR?: TrendWhereInput[]
+    NOT?: TrendWhereInput | TrendWhereInput[]
+    hastag?: StringFilter<"Trend"> | string
+    counter?: IntFilter<"Trend"> | number
+    updatedAt?: DateTimeFilter<"Trend"> | Date | string
   }, "id">
 
-  export type TrenOrderByWithAggregationInput = {
+  export type TrendOrderByWithAggregationInput = {
     id?: SortOrder
     hastag?: SortOrder
     counter?: SortOrder
     updatedAt?: SortOrder
-    _count?: TrenCountOrderByAggregateInput
-    _avg?: TrenAvgOrderByAggregateInput
-    _max?: TrenMaxOrderByAggregateInput
-    _min?: TrenMinOrderByAggregateInput
-    _sum?: TrenSumOrderByAggregateInput
+    _count?: TrendCountOrderByAggregateInput
+    _avg?: TrendAvgOrderByAggregateInput
+    _max?: TrendMaxOrderByAggregateInput
+    _min?: TrendMinOrderByAggregateInput
+    _sum?: TrendSumOrderByAggregateInput
   }
 
-  export type TrenScalarWhereWithAggregatesInput = {
-    AND?: TrenScalarWhereWithAggregatesInput | TrenScalarWhereWithAggregatesInput[]
-    OR?: TrenScalarWhereWithAggregatesInput[]
-    NOT?: TrenScalarWhereWithAggregatesInput | TrenScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Tren"> | number
-    hastag?: StringWithAggregatesFilter<"Tren"> | string
-    counter?: IntWithAggregatesFilter<"Tren"> | number
-    updatedAt?: DateTimeWithAggregatesFilter<"Tren"> | Date | string
+  export type TrendScalarWhereWithAggregatesInput = {
+    AND?: TrendScalarWhereWithAggregatesInput | TrendScalarWhereWithAggregatesInput[]
+    OR?: TrendScalarWhereWithAggregatesInput[]
+    NOT?: TrendScalarWhereWithAggregatesInput | TrendScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Trend"> | number
+    hastag?: StringWithAggregatesFilter<"Trend"> | string
+    counter?: IntWithAggregatesFilter<"Trend"> | number
+    updatedAt?: DateTimeWithAggregatesFilter<"Trend"> | Date | string
   }
 
   export type UserCreateInput = {
@@ -6715,46 +6715,46 @@ export namespace Prisma {
     user2Slug?: StringFieldUpdateOperationsInput | string
   }
 
-  export type TrenCreateInput = {
+  export type TrendCreateInput = {
     hastag: string
     counter?: number
     updatedAt?: Date | string
   }
 
-  export type TrenUncheckedCreateInput = {
+  export type TrendUncheckedCreateInput = {
     id?: number
     hastag: string
     counter?: number
     updatedAt?: Date | string
   }
 
-  export type TrenUpdateInput = {
+  export type TrendUpdateInput = {
     hastag?: StringFieldUpdateOperationsInput | string
     counter?: IntFieldUpdateOperationsInput | number
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type TrenUncheckedUpdateInput = {
+  export type TrendUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     hastag?: StringFieldUpdateOperationsInput | string
     counter?: IntFieldUpdateOperationsInput | number
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type TrenCreateManyInput = {
+  export type TrendCreateManyInput = {
     id?: number
     hastag: string
     counter?: number
     updatedAt?: Date | string
   }
 
-  export type TrenUpdateManyMutationInput = {
+  export type TrendUpdateManyMutationInput = {
     hastag?: StringFieldUpdateOperationsInput | string
     counter?: IntFieldUpdateOperationsInput | number
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type TrenUncheckedUpdateManyInput = {
+  export type TrendUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     hastag?: StringFieldUpdateOperationsInput | string
     counter?: IntFieldUpdateOperationsInput | number
@@ -7062,39 +7062,39 @@ export namespace Prisma {
     id?: SortOrder
   }
 
-  export type TrenOrderByRelevanceInput = {
-    fields: TrenOrderByRelevanceFieldEnum | TrenOrderByRelevanceFieldEnum[]
+  export type TrendOrderByRelevanceInput = {
+    fields: TrendOrderByRelevanceFieldEnum | TrendOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type TrenCountOrderByAggregateInput = {
+  export type TrendCountOrderByAggregateInput = {
     id?: SortOrder
     hastag?: SortOrder
     counter?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type TrenAvgOrderByAggregateInput = {
+  export type TrendAvgOrderByAggregateInput = {
     id?: SortOrder
     counter?: SortOrder
   }
 
-  export type TrenMaxOrderByAggregateInput = {
-    id?: SortOrder
-    hastag?: SortOrder
-    counter?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type TrenMinOrderByAggregateInput = {
+  export type TrendMaxOrderByAggregateInput = {
     id?: SortOrder
     hastag?: SortOrder
     counter?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type TrenSumOrderByAggregateInput = {
+  export type TrendMinOrderByAggregateInput = {
+    id?: SortOrder
+    hastag?: SortOrder
+    counter?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type TrendSumOrderByAggregateInput = {
     id?: SortOrder
     counter?: SortOrder
   }

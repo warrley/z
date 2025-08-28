@@ -52,7 +52,7 @@ model Follow {
   user2Slug String
 }
 
-model Tren {
+model Trend {
   id        Int      @id @default(autoincrement())
   hastag    String
   counter   Int      @default(1)

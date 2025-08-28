@@ -149,7 +149,7 @@ exports.Prisma.FollowScalarFieldEnum = {
   user2Slug: 'user2Slug'
 };
 
-exports.Prisma.TrenScalarFieldEnum = {
+exports.Prisma.TrendScalarFieldEnum = {
   id: 'id',
   hastag: 'hastag',
   counter: 'counter',
@@ -192,7 +192,7 @@ exports.Prisma.FollowOrderByRelevanceFieldEnum = {
   user2Slug: 'user2Slug'
 };
 
-exports.Prisma.TrenOrderByRelevanceFieldEnum = {
+exports.Prisma.TrendOrderByRelevanceFieldEnum = {
   hastag: 'hastag'
 };
 
@@ -202,7 +202,7 @@ exports.Prisma.ModelName = {
   Tweet: 'Tweet',
   TweetLike: 'TweetLike',
   Follow: 'Follow',
-  Tren: 'Tren'
+  Trend: 'Trend'
 };
 
 /**
