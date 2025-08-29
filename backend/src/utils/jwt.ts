@@ -8,7 +8,7 @@ export const generatedToken = async (userSlug: string) => {
 
 export const verifyToken = async (token: string) => {
     try{
-        const payload = jwt.verify(token, JWT_KEY);
+        const payload = await jwt.verify(token, JWT_KEY);
         return { valid: true, payload };
     } catch (err) {
         return { valid: false, payload: null }

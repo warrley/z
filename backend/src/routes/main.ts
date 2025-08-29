@@ -1,11 +1,12 @@
 import { Router } from "express";
 import * as PingController from "../controllers/ping";
 import * as authController from "../controllers/auth";
+import { privateRoute } from "../middleware/privateRoute";
 
 export const mainRouter = Router();
 
 mainRouter.get("/ping", PingController.ping);
-// mainRouter.get("/privateping");
+mainRouter.get("/privateping", privateRoute, PingController.privateping);
 
 mainRouter.post("/auth/signup", authController.signup);
 mainRouter.post("/auth/signin", authController.signin);
