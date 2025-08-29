@@ -1,17 +1,18 @@
 import { Router } from "express";
-import * as PingController from "../controllers/ping";
+import * as pingController from "../controllers/ping";
 import * as authController from "../controllers/auth";
+import * as tweetController from "../controllers/tweet";
 import { privateRoute } from "../middleware/privateRoute";
 
 export const mainRouter = Router();
 
-mainRouter.get("/ping", PingController.ping);
-mainRouter.get("/privateping", privateRoute, PingController.privateping);
+mainRouter.get("/ping", pingController.ping);
+mainRouter.get("/privateping", privateRoute, pingController.privateping);
 
 mainRouter.post("/auth/signup", authController.signup);
 mainRouter.post("/auth/signin", authController.signin);
 
-// mainRouter.post("/tweet");
+mainRouter.post("/tweet", privateRoute, tweetController.addTweet);
 // mainRouter.get("tweet/:id"); 
 // mainRouter.get("/tweet/:id/answers");
 // mainRouter.post("/tweet/:id/like");
