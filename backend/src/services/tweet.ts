@@ -1,7 +1,7 @@
 import { prisma } from "../utils/prisma"
 import { getPublicURL } from "../utils/url";
 
-export const find = async (id: number) => {
+export const findById = async (id: number) => {
     const tweet = await prisma.tweet.findFirst({ 
         include: {
             user: {

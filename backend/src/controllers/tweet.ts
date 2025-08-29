@@ -1,7 +1,7 @@
 import { Response } from "express";
 import { AuthRequest } from "../middleware/privateRoute";
 import { addTweetSchema } from "../schemas/add-tweet";
-import { create, find } from "../services/tweet";
+import { create, findById } from "../services/tweet";
 import { addHastag } from "../services/trending";
 
 export const addTweet = async (req: AuthRequest, res: Response) => {
@@ -14,7 +14,7 @@ export const addTweet = async (req: AuthRequest, res: Response) => {
     const { body, answer } = safeData.data;
 
     if(answer) {
-        if(!await find(parseInt(answer))) {
+        if(!await findById(parseInt(answer))) {
             res.json({ error: "Original tweet doesn't exists" });
             return;
         };
@@ -32,6 +32,18 @@ export const addTweet = async (req: AuthRequest, res: Response) => {
         };
     };
 
+
+    res.status(201).json({ error: null, tweet });
+};
+
+export const getTweet = async (req: AuthRequest, res: Response) => {
+    const { id } = req.params;
+
+    const tweet = await findById(parseInt(id));
+    if(!tweet) {
+        res.json({ error: "Tweet inexists" });
+        return;
+    };
 
     res.json({ error: null, tweet });
 };
