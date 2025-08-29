@@ -39,3 +39,21 @@ export const save = async (newUser: Prisma.UserCreateInput) => {
         cover: getPublicURL(user.cover)
     }
 };
+
+export const followingCount = async (userSlug: string) => {
+    return await prisma.follow.count({
+        where: { user1Slug: userSlug }
+    });
+};
+
+export const followersCount = async (userSlug: string) => {
+    return await prisma.follow.count({
+        where: { user2Slug: userSlug }
+    });
+}
+
+export const tweetCount = async (userSlug: string) => {
+    return await prisma.tweet.count({
+        where: { userSlug }
+    });
+};
