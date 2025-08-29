@@ -15,7 +15,7 @@ mainRouter.post("/auth/signin", authController.signin);
 mainRouter.post("/tweet", privateRoute, tweetController.addTweet);
 mainRouter.get("/tweet/:id", privateRoute, tweetController.getTweet); 
 mainRouter.get("/tweet/:id/answers", privateRoute, tweetController.getAnswers);
-// mainRouter.post("/tweet/:id/like");
+mainRouter.post("/tweet/:id/like", privateRoute, tweetController.likeToggle);
 
 // mainRouter.get("/user/:slug");
 // mainRouter.get("/user/:slug/tweets");

@@ -1,7 +1,7 @@
 import { Response } from "express";
 import { AuthRequest } from "../middleware/privateRoute";
 import { addTweetSchema } from "../schemas/add-tweet";
-import { create, findAnswers, findById } from "../services/tweet";
+import { create, findAnswers, findById, like, tweetIsLikedByUser, unlike } from "../services/tweet";
 import { addHastag } from "../services/trending";
 
 export const addTweet = async (req: AuthRequest, res: Response) => {
@@ -41,7 +41,7 @@ export const getTweet = async (req: AuthRequest, res: Response) => {
 
     const tweet = await findById(parseInt(id));
     if(!tweet) {
-        res.json({ error: "Tweet inexists" });
+        res.json({ error: "Tweet does not inexists" });
         return;
     };
     
@@ -54,4 +54,22 @@ export const getAnswers = async (req: AuthRequest, res: Response) => {
     const answers = await findAnswers(parseInt(id));
 
     res.json({ error: null, answers });
-}
+};
+
+export const likeToggle = async (req: AuthRequest, res: Response) => {
+    const id = parseInt(req.params.id);
+    
+    if(await tweetIsLikedByUser(req.userSlug as string, id)) {
+        unlike(req.userSlug as string, id);
+    } else {
+        like(req.userSlug as string, id);
+    };
+
+    const tweet = findById(id);
+    if(!tweet) {
+        res.json({ error: "Tweet does not inexists" });
+        return;
+    };
+
+    res.json({ error: null });
+};
