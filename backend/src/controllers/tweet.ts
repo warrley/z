@@ -1,7 +1,7 @@
 import { Response } from "express";
 import { AuthRequest } from "../middleware/privateRoute";
 import { addTweetSchema } from "../schemas/add-tweet";
-import { create, findById } from "../services/tweet";
+import { create, findAnswers, findById } from "../services/tweet";
 import { addHastag } from "../services/trending";
 
 export const addTweet = async (req: AuthRequest, res: Response) => {
@@ -44,6 +44,14 @@ export const getTweet = async (req: AuthRequest, res: Response) => {
         res.json({ error: "Tweet inexists" });
         return;
     };
-
+    
     res.json({ error: null, tweet });
 };
+
+export const getAnswers = async (req: AuthRequest, res: Response) => {
+    const { id } = req.params;
+    
+    const answers = await findAnswers(parseInt(id));
+
+    res.json({ error: null, answers });
+}
