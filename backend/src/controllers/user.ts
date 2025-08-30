@@ -1,7 +1,8 @@
 import { Response } from "express";
 import { AuthRequest } from "../middleware/privateRoute";
-import { alreadyFollowing, findBySlug, follow, followersCount, followingCount, tweetCount, unfollow } from "../services/user";
+import { alreadyFollowing, findBySlug, follow, followersCount, followingCount, tweetCount, unfollow, update } from "../services/user";
 import { findXTweetsByUserSlug } from "../services/tweet";
+import { userUpdateSchema } from "../schemas/updateUserSchema";
 
 export const getUser = async (req: AuthRequest, res: Response) => {
     const userSlug = req.params.slug;
@@ -52,3 +53,17 @@ export const followToggle = async (req: AuthRequest, res: Response) => {
 
     res.json({ error: null, following: await alreadyFollowing(me, userSlug) });
 };
+
+export const updateUser = async (req: AuthRequest, res: Response) => {
+    const userSlug = req.userSlug as string;
+
+    const safeData = userUpdateSchema.safeParse(req.body);
+    if(!safeData.success) {
+        res.json({ error: safeData.error.flatten().fieldErrors });
+        return;
+    };
+
+    await update(userSlug, safeData.data);
+    
+    res.json({ error: null });
+}

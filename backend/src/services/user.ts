@@ -40,6 +40,10 @@ export const save = async (newUser: Prisma.UserCreateInput) => {
     }
 };
 
+export const update = async (slug: string, data: Prisma.UserUpdateInput) => {
+    return await prisma.user.update({ where: { slug }, data });
+};
+
 export const alreadyFollowing = async (user1Slug: string, user2Slug: string) => {
     return (await prisma.follow.findFirst({ where: { user1Slug, user2Slug }, select: { id: true } })) ? true : false;
 };
