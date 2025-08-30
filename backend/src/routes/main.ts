@@ -20,7 +20,7 @@ mainRouter.post("/tweet/:id/like", privateRoute, tweetController.likeToggle);
 
 mainRouter.get("/user/:slug", privateRoute, userController.getUser);
 mainRouter.get("/user/:slug/tweets", privateRoute, userController.getUserTweets);
-// mainRouter.post("/user/:slug/follow");
+mainRouter.post("/user/:slug/follow", privateRoute, userController.followToggle);;
 // mainRouter.put("/user");
 // mainRouter.put("/user/avatar");
 // mainRouter.put("/user/cover");

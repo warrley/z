@@ -40,6 +40,18 @@ export const save = async (newUser: Prisma.UserCreateInput) => {
     }
 };
 
+export const alreadyFollowing = async (user1Slug: string, user2Slug: string) => {
+    return (await prisma.follow.findFirst({ where: { user1Slug, user2Slug }, select: { id: true } })) ? true : false;
+};
+
+export const follow = async (user1Slug: string, user2Slug: string) => {
+    await prisma.follow.create({ data: { user1Slug, user2Slug } });
+};
+
+export const unfollow = async (user1Slug: string, user2Slug: string) => {
+    await prisma.follow.deleteMany({ where: { user1Slug, user2Slug } });
+};
+
 export const followingCount = async (userSlug: string) => {
     return await prisma.follow.count({
         where: { user1Slug: userSlug }
