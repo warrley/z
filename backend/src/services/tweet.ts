@@ -103,9 +103,34 @@ export const findFeed = async (following: string[], limit: number, page: number)
         take: limit
     });
 
-    // for(let tweetIndex in tweets) {
-    //     tweets[tweetIndex].user.avatar = getPublicURL(tweets[tweetIndex].user.avatar);
-    // };
+    for(let tweetIndex in tweets) {
+        tweets[tweetIndex].user.avatar = getPublicURL(tweets[tweetIndex].user.avatar);
+    };
+
+    return tweets;
+};
+
+export const findByBody = async (bodyContains: string, limit: number, page: number) => {
+    const tweets = await prisma.tweet.findMany({
+        include: {
+            user: {
+                select: {
+                    name: true, avatar: true, slug: true
+                }
+            },
+            likes: {
+                select: { userSlug: true }
+            }
+        },
+        where: { body: { contains: bodyContains } },
+        orderBy: { createdAt: "desc" },
+        skip: page * limit,
+        take: limit
+    });
+
+    for(let tweetIndex in tweets) {
+        tweets[tweetIndex].user.avatar = getPublicURL(tweets[tweetIndex].user.avatar);
+    };
 
     return tweets;
 };
