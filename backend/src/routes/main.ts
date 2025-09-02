@@ -6,6 +6,7 @@ import * as userController from "../controllers/user";
 import * as feedController from "../controllers/feed";
 import * as searchController from "../controllers/search";
 import * as trendingController from "../controllers/trending";
+import * as suggestionController from "../controllers/suggestion";
 import { privateRoute } from "../middleware/privateRoute";
 
 export const mainRouter = Router();
@@ -31,4 +32,4 @@ mainRouter.put("/user", privateRoute, userController.updateUser);
 mainRouter.get("/feed", privateRoute, feedController.getFeed);
 mainRouter.get("/search", privateRoute, searchController.searchTweets);
 mainRouter.get("/trending", privateRoute, trendingController.getTrends);
-// mainRouter.get("/suggestions");
+mainRouter.get("/suggestions", privateRoute, suggestionController.getUserSuggestions);

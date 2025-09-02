@@ -1,6 +1,7 @@
 import { Prisma, User } from "../generated/prisma";
 import { prisma } from "../utils/prisma";
 import { getPublicURL } from "../utils/url";
+import { findXTweetsByUserSlug } from "./tweet";
 
 export const findByEmail = async (email: string) => {
     const user = await prisma.user.findUnique({ where: { email } });
@@ -83,4 +84,28 @@ export const usersFollowing = async (slug: string) => {
     };
 
     return following;
+};
+
+export const getSuggestions = async (slug: string) => {
+    const following = await usersFollowing(slug);
+    const followingPlusMe = [...following, slug]
+
+    type Suggestion = {
+        name: string;
+        avatar: string;
+        slug: string;
+    };
+
+    const suggestions: Suggestion[] = await prisma.$queryRaw`
+    SELECT 
+        name, avatar, slug
+    FROM \`User\`
+    WHERE slug NOT IN (${Prisma.join(followingPlusMe)})
+    ORDER BY RAND()
+    LIMIT 2;
+`;
+
+    for(let sugIndex in suggestions) {
+        suggestions[sugIndex].avatar = getPublicURL(suggestions[sugIndex].avatar);
+    }
 };
