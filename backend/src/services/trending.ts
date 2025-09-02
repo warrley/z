@@ -15,3 +15,11 @@ export const addHastag = async (hastag: string) => {
         });
     };
 };
+
+export const find = async () => {
+    return prisma.trend.findMany({
+        select: { hastag: true, counter: true },
+        orderBy: { counter: "desc" },
+        take: 4
+    });
+};
