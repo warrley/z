@@ -43,6 +43,11 @@ export const followToggle = async (req: AuthRequest, res: Response) => {
 
     const me = req.userSlug as string;
 
+    if(me == userSlug) {
+        res.json({ error: "Same users" });
+        return;
+    }
+
     if(!await findBySlug(userSlug)) {
         res.json({ error: "User does not exist" });
         return;
@@ -66,4 +71,4 @@ export const updateUser = async (req: AuthRequest, res: Response) => {
     await update(userSlug, safeData.data);
     
     res.json({ error: null });
-}
+};

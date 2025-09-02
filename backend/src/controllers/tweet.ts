@@ -3,6 +3,7 @@ import { AuthRequest } from "../middleware/privateRoute";
 import { addTweetSchema } from "../schemas/add-tweet";
 import { create, findAnswers, findById, like, tweetIsLikedByUser, unlike } from "../services/tweet";
 import { addHastag } from "../services/trending";
+import { prisma } from "../utils/prisma";
 
 export const addTweet = async (req: AuthRequest, res: Response) => {
     const safeData = addTweetSchema.safeParse(req.body);

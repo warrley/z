@@ -3,7 +3,6 @@ import { signupSchema } from "../schemas/signup";
 import { findByEmail, findBySlug, save } from "../services/user";
 import bcrypt from "bcryptjs";
 import slug from "slugify";
-import { allowsEval } from "zod/v4/core/util.cjs";
 import { generatedToken } from "../utils/jwt";
 import { signinSchema } from "../schemas/signin";
 

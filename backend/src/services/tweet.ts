@@ -84,3 +84,28 @@ export const unlike = async (userSlug: string, id: number) => {
 export const like = async (userSlug: string, id: number) => {
     await prisma.tweetLike.create({ data: { userSlug, tweetId: id } });
 };
+
+export const findFeed = async (following: string[], limit: number, page: number) => {
+    const tweets = await prisma.tweet.findMany({ 
+        include: {
+            user: {
+                select: {
+                    name: true, avatar: true, slug: true
+                }
+            },
+            likes: {
+                select: { userSlug: true }
+            }
+        },
+        where: { userSlug: { in: following }, answerOf: 0 },
+        orderBy: { createdAt: "desc" },
+        skip: limit * page, 
+        take: limit
+    });
+
+    // for(let tweetIndex in tweets) {
+    //     tweets[tweetIndex].user.avatar = getPublicURL(tweets[tweetIndex].user.avatar);
+    // };
+
+    return tweets;
+};
